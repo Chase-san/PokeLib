@@ -24,8 +24,10 @@
 
 namespace PokeLib {
 
+//Black and White are not yet fully supported
+
 enum SaveType {
-	DP=0, PLAT=1, HGSS=2
+	DP=0, PLAT=1, HGSS=2, BW=3
 };
 enum SaveFormat {
 	RAW256KiB=256, RAW512KiB=512
@@ -79,6 +81,13 @@ public:
 	//Trainer
 	Trainer *getTrainer() const;
 	void setTrainer(Trainer *p);
+	
+	//Signature
+	//http://www.projectpokemon.org/wiki/Trainer_Card_Signature
+	//0x600 bytes long, 1 bpp, 192x64
+	//8x8 blocks
+	uint8_t * getSignatureRaw() const;
+	void setSignatureRaw(uint8_t * raw);
 
 	//Pokedex
 	Pokedex *getPokedex() const;

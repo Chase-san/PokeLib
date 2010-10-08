@@ -29,7 +29,9 @@ uint32_t blockID[][2] = {
 };
 
 uint32_t footerSize[] = {
-	0x14,0x14,0x10
+	0x14,//DP
+	0x14,//PLAT
+	0x10,//HGSS
 };
 
 uint32_t blockSize[][2] = {
@@ -39,7 +41,23 @@ uint32_t blockSize[][2] = {
 };
 
 uint32_t partyStart[] = {
-	0x98, 0xA0, 0x98
+	0x98,//DP
+	0xA0,//PLAT
+	0x98,//HGSS
+};
+
+uint32_t sigStart[] = {
+	0x5904,//DP
+	0x5BA8,//PLAT
+	0x4538,//HGSS
+	0x1C100,//BW
+};
+
+uint32_t sigSize[] = {
+	0x600,
+	0x600,
+	0x600,
+	0x600,
 };
 
 struct FooterHGSS {
@@ -251,6 +269,16 @@ void Save::setTrainer(Trainer *p) {
 	p->saveInto(this);
 }
 
+uint8_t *Save::getSignatureRaw() const {
+	int type = getSaveType();
+	uint8_t * block = new uint8_t[sigSize[type]];
+	uint8_t * ptr = &BlockA[sigStart[type]];
+	memcpy(block,ptr,sigSize[type]);
+}
 
+void Save::setSignatureRaw(uint8_t * raw) {
+	uint8_t * ptr = &BlockA[sigStart[type]];
+	memcpy(ptr,block,sigSize[type]);
+}
 
 }
