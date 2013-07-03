@@ -31,11 +31,14 @@ enum ItemPocket {
 };
 
 //4 byte structure
+#pragma pack(push, 1)
 struct BagItem {
 	uint16_t item;
 	uint16_t count;
-} __PACK__;
+};
+#pragma pack(pop)
 
+#pragma pack(push, 1)
 struct Badge {
 	unsigned int badge_1 : 1;
 	unsigned int badge_2 : 1;
@@ -45,7 +48,8 @@ struct Badge {
 	unsigned int badge_6 : 1;
 	unsigned int badge_7 : 1;
 	unsigned int badge_8 : 1;
-} __PACK__;
+};
+#pragma pack(pop)
 
 class Trainer {
 	poketext trainer;

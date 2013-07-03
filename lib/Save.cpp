@@ -60,14 +60,17 @@ uint32_t sigSize[] = {
 	0x600,
 };
 
+#pragma pack(push, 1)
 struct FooterHGSS {
 	uint32_t saveNum;
 	uint32_t blockSize;
 	uint32_t unknown0;
 	uint16_t unknown1;
 	uint16_t checksum;
-} __PACK__;
+};
+#pragma pack(pop)
 
+#pragma pack(push, 1)
 struct FooterDPPt {
 	uint32_t saveStorage;
 	uint32_t saveGeneral;
@@ -75,7 +78,8 @@ struct FooterDPPt {
 	uint32_t unknown0;
 	uint16_t unknown1;
 	uint16_t checksum;
-} __PACK__;
+};
+#pragma pack(pop)
 
 union Footer {
 	FooterHGSS HGSS;
@@ -274,6 +278,7 @@ uint8_t *Save::getSignatureRaw() const {
 	uint8_t * block = new uint8_t[sigSize[type]];
 	uint8_t * ptr = &BlockA[sigStart[type]];
 	memcpy(block,ptr,sigSize[type]);
+    return block;
 }
 
 void Save::setSignatureRaw(uint8_t * raw) {

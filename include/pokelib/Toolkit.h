@@ -26,6 +26,7 @@ union bIV {
 		hp = _hp; atk = _atk; def = _def; spd = _spd; satk = _satk; sdef = _sdef;
 	}
 	uint32_t block;
+    #pragma pack(push, 1)
 	struct {
 		unsigned int hp   : 5;
 		unsigned int atk  : 5;
@@ -34,7 +35,8 @@ union bIV {
 		unsigned int satk : 5;
 		unsigned int sdef : 5;
 		unsigned int EXTRA : 2;
-	} __PACK__;
+	};
+    #pragma pack(pop)
 };
 
 class Toolkit {
