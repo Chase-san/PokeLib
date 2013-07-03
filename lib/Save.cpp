@@ -277,6 +277,7 @@ uint8_t *Save::getSignatureRaw() const {
 }
 
 void Save::setSignatureRaw(uint8_t * raw) {
+    uint8_t * block = new uint8_t[sigSize[type]];
 	uint8_t * ptr = &BlockA[sigStart[type]];
 	memcpy(ptr,block,sigSize[type]);
 }
