@@ -9,6 +9,7 @@
 #ifndef TOOLKIT_H_
 #define TOOLKIT_H_
 
+#include <pokelib/config.h>
 #include <vector>
 
 namespace PokeLib {
@@ -39,7 +40,7 @@ union bIV {
     #pragma pack(pop)
 };
 
-class Toolkit {
+class DLL_EXPORT Toolkit {
 	private:
 		static uint8_t* _shuffle(uint8_t*, bool);
 		static uint8_t* _crypt(uint8_t*, bool);

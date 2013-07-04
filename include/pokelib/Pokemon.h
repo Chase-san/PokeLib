@@ -13,6 +13,8 @@
 #ifndef POKEMON_H_
 #define POKEMON_H_
 
+#include <pokelib/config.h>
+
 namespace PokeLib {
 
 #pragma pack(push, 1)
@@ -248,7 +250,7 @@ enum Gender {
 	MALE=0,FEMALE=1,GENDERLESS=3
 };
 
-class Pokemon {
+class DLL_EXPORT Pokemon {
 public:
 	Pokemon();
 	Pokemon(uint8_t* data, uint8_t length);

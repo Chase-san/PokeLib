@@ -264,7 +264,7 @@ widetext PokeText::toWidetext(const char* mb, size_t length) {
 	//wchar_t tmp[length];
     std::vector<wchar_t> tmp(length);
 	mbstowcs(&tmp[0], mb, length);
-	return toWidetext(tmp,length);
+	return toWidetext(&tmp[0],length);
 }
 
 }
