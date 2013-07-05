@@ -9,7 +9,19 @@
 #ifndef _____POKE_LIB_H_____
 #define _____POKE_LIB_H_____
 
-#include <pokelib/config.h>
+// Configuration
+#ifdef defined(_MSC_VER)
+#define DLL_EXPORT __declspec(dllexport)
+// class 'A<T>' needs to have dll-interface to be used by clients of class 'B'
+#pragma warning(disable: 4251)
+#elif defined(__GCC__)
+// GCC visibility
+#define DLL_EXPORT __attribute__((visibility("default")))
+#else
+// Use an empty macro for everything we don't know about
+#define DLL_EXPORT
+#endif
+
 #include <stdint.h>
 #include <string>
 #include <pokelib/PRNG.h>
