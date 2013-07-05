@@ -17,7 +17,7 @@
 
 namespace PokeLib {
 
-#pragma pack(push, 1)
+#pragma pack(1)
 typedef struct {
 	//Byte 1
 	unsigned int sinnoh_champ	: 1;
@@ -53,9 +53,9 @@ typedef struct {
 	unsigned int premier	: 1;
 	unsigned int UNKNOWN	: 4;
 } pRibbonSinnohA;
-#pragma pack(pop)
+#pragma pack()
 
-#pragma pack(push, 1)
+#pragma pack(1)
 typedef struct {
 	//Byte1
 	unsigned int cool_normal	: 1;
@@ -82,9 +82,9 @@ typedef struct {
 	unsigned int tough_master	: 1;
 	unsigned int UNKNOWN	: 12;
 } pRibbonSinnohB;
-#pragma pack(pop)
+#pragma pack()
 
-#pragma pack(push, 1)
+#pragma pack(1)
 typedef struct {
 	//Byte1
 	unsigned int cool_normal	: 1;
@@ -123,9 +123,9 @@ typedef struct {
 	unsigned int earth	: 1;
 	unsigned int world	: 1;
 } pRibbonHoenn;
-#pragma pack(pop)
+#pragma pack()
 
-#pragma pack(push, 1)
+#pragma pack(1)
 //Be careful if you choose to edit this, its packed!
 struct pPKM {
 	uint32_t pid;
@@ -228,9 +228,9 @@ struct pPKM {
 	uint8_t battle_unknown_x9C_xD3[56]; //76
 	uint8_t battle_seal_coord[24]; //100
 };
-#pragma pack(pop)
+#pragma pack()
 
-#pragma pack(push, 1)
+#pragma pack(1)
 struct pBlock {
 	uint32_t pid;
 	char unknown[2];
@@ -238,7 +238,7 @@ struct pBlock {
 	uint8_t block[4][32];
 	uint8_t partyData[100];
 };
-#pragma pack(pop)
+#pragma pack()
 
 union PKM {
 	uint8_t	raw[236];

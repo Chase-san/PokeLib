@@ -31,14 +31,14 @@ enum ItemPocket {
 };
 
 //4 byte structure
-#pragma pack(push, 1)
+#pragma pack(1)
 struct BagItem {
 	uint16_t item;
 	uint16_t count;
 };
-#pragma pack(pop)
+#pragma pack()
 
-#pragma pack(push, 1)
+#pragma pack(1)
 struct Badge {
 	unsigned int badge_1 : 1;
 	unsigned int badge_2 : 1;
@@ -49,7 +49,7 @@ struct Badge {
 	unsigned int badge_7 : 1;
 	unsigned int badge_8 : 1;
 };
-#pragma pack(pop)
+#pragma pack()
 
 class DLL_EXPORT Trainer {
 	poketext trainer;
