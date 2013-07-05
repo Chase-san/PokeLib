@@ -3,6 +3,7 @@ What can I say, its pokelib.
 TODO:
 Pokedex editing.
 Fix bugs in item editing.
-
-Later:
 Add Black/White save support
+
+Note:
+Not a big fan of CMake.
