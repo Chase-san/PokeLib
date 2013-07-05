@@ -21,17 +21,17 @@ namespace PokeLib {
 
 class DLL_EXPORT Party {
 public:
-	Party();
-	virtual ~Party();
-	/* Size of the data is 1416 [6*236] bytes. */
-	uint8_t *data;
+    Party();
+    virtual ~Party();
+    /* Size of the data is 1416 [6*236] bytes. */
+    uint8_t *data;
 
-	Pokemon getPokemon(uint8_t slot) const;
-	void setPokemon(uint8_t slot, const Pokemon &pkm);
-	//Sorts all pokemon to the top of the party
-	void erasePokemon(uint8_t slot);
-	uint8_t count();
-	void sort();
+    Pokemon getPokemon(uint8_t slot) const;
+    void setPokemon(uint8_t slot, const Pokemon &pkm);
+    //Sorts all pokemon to the top of the party
+    void erasePokemon(uint8_t slot);
+    uint8_t count();
+    void sort();
 };
 
 }

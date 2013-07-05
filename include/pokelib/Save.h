@@ -29,13 +29,13 @@ namespace PokeLib {
 //Black and White are not yet fully supported
 
 enum SaveType {
-	DP=0, PLAT=1, HGSS=2, BW=3
+    DP=0, PLAT=1, HGSS=2, BW=3
 };
 enum SaveFormat {
-	RAW256KiB=256, RAW512KiB=512
+    RAW256KiB=256, RAW512KiB=512
 };
 enum SavePosition {
-	SaveMain, SaveSub
+    SaveMain, SaveSub
 };
 
 class Box;
@@ -44,56 +44,62 @@ class Trainer;
 class Pokedex;
 
 class DLL_EXPORT Save {
-	//these are internal for safety reasons
-	SaveType type;
-	SaveFormat format;
-	SavePosition pos;
+    //these are internal for safety reasons
+    SaveType type;
+    SaveFormat format;
+    SavePosition pos;
 
-	uint8_t* FooterA;
-	uint8_t* FooterB;
+    uint8_t* FooterA;
+    uint8_t* FooterB;
 public:
-	Save(uint32_t size);
-	virtual ~Save();
+    Save(uint32_t size);
+    virtual ~Save();
 
-	uint8_t* data;
-	uint8_t* BlockA;
-	uint8_t* BlockB;
+    uint8_t* data;
+    uint8_t* BlockA;
+    uint8_t* BlockB;
 
-	//Basic functions
-	bool parseRawSave();
-	uint16_t calcBlockAChecksum() const;
-	uint16_t calcBlockBChecksum() const;
-	void repairBlockAChecksum();
-	void repairBlockBChecksum();
+    //Basic functions
+    bool parseRawSave();
+    uint16_t calcBlockAChecksum() const;
+    uint16_t calcBlockBChecksum() const;
+    void repairBlockAChecksum();
+    void repairBlockBChecksum();
 
-	//Informative functions
-	inline SaveType getSaveType() const { return type; }
-	inline SaveFormat getSaveFormat() const { return format; }
-	inline SavePosition getSavePosition() const { return pos; }
-	void setSavePosition(SavePosition p);
+    //Informative functions
+    inline SaveType getSaveType() const {
+        return type;
+    }
+    inline SaveFormat getSaveFormat() const {
+        return format;
+    }
+    inline SavePosition getSavePosition() const {
+        return pos;
+    }
+    void setSavePosition(SavePosition p);
 
-	//Box functions
-	Box *getBox(uint8_t n) const;
-	void setBox(uint8_t n, Box *b);
+    //Box functions
+    Box *getBox(uint8_t n) const;
+    void setBox(uint8_t n, Box *b);
 
-	//Party functions
-	Party *getParty() const;
-	void setParty(Party *p);
+    //Party functions
+    Party *getParty() const;
+    void setParty(Party *p);
 
-	//Trainer
-	Trainer *getTrainer() const;
-	void setTrainer(Trainer *p);
-	
-	//Signature
-	//http://www.projectpokemon.org/wiki/Trainer_Card_Signature
-	//0x600 bytes long, 1 bpp, 192x64
-	//8x8 blocks
-	uint8_t * getSignatureRaw() const;
-	void setSignatureRaw(uint8_t * raw);
+    //Trainer
+    Trainer *getTrainer() const;
+    void setTrainer(Trainer *p);
 
-	//Pokedex
-	Pokedex *getPokedex() const;
-	void setPokedex(Pokedex *p);
+    //Signature
+    //http://www.projectpokemon.org/wiki/Trainer_Card_Signature
+    //0x600 bytes long, 1 bpp, 192x64
+    //8x8 blocks
+    uint8_t * getSignatureRaw() const;
+    void setSignatureRaw(uint8_t * raw);
+
+    //Pokedex
+    Pokedex *getPokedex() const;
+    void setPokedex(Pokedex *p);
 };
 
 }

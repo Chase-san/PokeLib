@@ -12,14 +12,14 @@
 #include <pokelib/config.h>
 
 namespace PokeLib {
-	class DLL_EXPORT PRNG {
-	public:
-		uint32_t seed;
-		void prevSeed();
-		void nextSeed();
-		uint16_t prev();
-		uint16_t current() const;
-		uint16_t next();
-	};
+class DLL_EXPORT PRNG {
+public:
+    uint32_t seed;
+    void prevSeed();
+    void nextSeed();
+    uint16_t prev();
+    uint16_t current() const;
+    uint16_t next();
+};
 }
 #endif /* PRNG_H_ */

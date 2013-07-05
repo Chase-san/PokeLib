@@ -20,24 +20,28 @@
 
 namespace PokeLib {
 class DLL_EXPORT Box {
-	widetext name;
-	uint8_t wallpaper;
+    widetext name;
+    uint8_t wallpaper;
 public:
-	Box();
-	virtual ~Box();
-	uint8_t *data;
+    Box();
+    virtual ~Box();
+    uint8_t *data;
 
-	widetext getName() const;
-	void setName(const widetext &text);
+    widetext getName() const;
+    void setName(const widetext &text);
 
-	uint8_t getWallpaper() const { return wallpaper; }
-	void setWallpaper(uint8_t numb) { wallpaper = numb; }
+    uint8_t getWallpaper() const {
+        return wallpaper;
+    }
+    void setWallpaper(uint8_t numb) {
+        wallpaper = numb;
+    }
 
-	Pokemon getPokemon(uint8_t slot) const;
-	void setPokemon(uint8_t slot, const Pokemon &pkm);
-	void erasePokemon(uint8_t slot);
+    Pokemon getPokemon(uint8_t slot) const;
+    void setPokemon(uint8_t slot, const Pokemon &pkm);
+    void erasePokemon(uint8_t slot);
 
-	uint8_t count() const;
+    uint8_t count() const;
 };
 
 }

@@ -14,17 +14,23 @@
 #include <pokelib/config.h>
 
 namespace PokeLib {
-	class DLL_EXPORT Pokedex {
-	public:
-		Pokedex(Save *sav);
-		virtual ~Pokedex();
+class DLL_EXPORT Pokedex {
+public:
+    Pokedex(Save *sav);
+    virtual ~Pokedex();
 
-		void saveInto(Save *sav);
+    void saveInto(Save *sav);
 
-		bool hasSeen(int num) { return false; }
-		bool hasCaught(int num) { return false; }
-		bool hasGender(int num) { return false; }
-	};
+    bool hasSeen(int num) {
+        return false;
+    }
+    bool hasCaught(int num) {
+        return false;
+    }
+    bool hasGender(int num) {
+        return false;
+    }
+};
 }
 
 #endif /* POKEDEX_H_ */
