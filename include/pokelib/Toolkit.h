@@ -17,10 +17,6 @@ namespace PokeLib {
 //this is a prototype
 class PRNG;
 
-#ifndef __PACK__
-#define __PACK__	__attribute__((__packed__))
-#endif
-
 union bIV {
 	public:
 	inline void set(int _hp, int _atk, int _def, int _spd, int _satk, int _sdef) {
