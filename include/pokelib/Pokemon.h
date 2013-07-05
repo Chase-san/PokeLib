@@ -13,8 +13,6 @@
 #ifndef POKEMON_H_
 #define POKEMON_H_
 
-#include <pokelib/config.h>
-
 namespace PokeLib {
 
 #pragma pack(1)

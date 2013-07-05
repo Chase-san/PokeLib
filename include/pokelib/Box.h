@@ -16,8 +16,6 @@
 #ifndef BOX_H_
 #define BOX_H_
 
-#include <pokelib/config.h>
-
 namespace PokeLib {
 class DLL_EXPORT Box {
     widetext name;

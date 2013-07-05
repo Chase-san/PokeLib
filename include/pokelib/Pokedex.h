@@ -11,8 +11,6 @@
 #ifndef POKEDEX_H_
 #define POKEDEX_H_
 
-#include <pokelib/config.h>
-
 namespace PokeLib {
 class DLL_EXPORT Pokedex {
 public:

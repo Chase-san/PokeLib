@@ -9,8 +9,6 @@
 #ifndef POKETEXT_H_
 #define POKETEXT_H_
 
-#include <pokelib/config.h>
-
 namespace PokeLib {
 
 typedef std::basic_string<uint16_t> poketext;

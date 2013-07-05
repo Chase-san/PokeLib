@@ -22,8 +22,6 @@
 #ifndef ___SAVE_H_
 #define ___SAVE_H_
 
-#include <pokelib/config.h>
-
 namespace PokeLib {
 
 //Black and White are not yet fully supported

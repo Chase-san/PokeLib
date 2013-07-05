@@ -15,8 +15,6 @@
 #ifndef PARTY_H_
 #define PARTY_H_
 
-#include <pokelib/config.h>
-
 namespace PokeLib {
 
 class DLL_EXPORT Party {

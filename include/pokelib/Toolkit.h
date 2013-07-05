@@ -9,7 +9,6 @@
 #ifndef TOOLKIT_H_
 #define TOOLKIT_H_
 
-#include <pokelib/config.h>
 #include <vector>
 
 namespace PokeLib {

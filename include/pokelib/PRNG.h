@@ -9,8 +9,6 @@
 #ifndef PRNG_H_
 #define PRNG_H_
 
-#include <pokelib/config.h>
-
 namespace PokeLib {
 class DLL_EXPORT PRNG {
 public:
