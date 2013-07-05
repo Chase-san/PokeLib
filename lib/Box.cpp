@@ -20,7 +20,7 @@ Box::~Box() {
 }
 
 
-Pokemon Box::getPokemon(uint8_t slot) {
+Pokemon Box::getPokemon(uint8_t slot) const {
 	if(slot < 1 || slot > 30) return *((Pokemon*)NULL);
 	uint8_t *ptr = &data[136*(slot-1)];
 	Pokemon out(ptr,136);
@@ -29,7 +29,7 @@ Pokemon Box::getPokemon(uint8_t slot) {
 	return out;
 }
 
-widetext Box::getName() {
+widetext Box::getName() const {
 	return name;
 }
 

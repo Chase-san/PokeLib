@@ -13,10 +13,11 @@
 #ifndef POKEMON_H_
 #define POKEMON_H_
 
+#include <pokelib/config.h>
+
 namespace PokeLib {
 
-#define __PACK__	__attribute__((__packed__))
-
+#pragma pack(push, 1)
 typedef struct {
 	//Byte 1
 	unsigned int sinnoh_champ	: 1;
@@ -51,8 +52,10 @@ typedef struct {
 	unsigned int classic	: 1;
 	unsigned int premier	: 1;
 	unsigned int UNKNOWN	: 4;
-} __PACK__ pRibbonSinnohA;
+} pRibbonSinnohA;
+#pragma pack(pop)
 
+#pragma pack(push, 1)
 typedef struct {
 	//Byte1
 	unsigned int cool_normal	: 1;
@@ -78,9 +81,10 @@ typedef struct {
 	unsigned int tough_hyper	: 1;
 	unsigned int tough_master	: 1;
 	unsigned int UNKNOWN	: 12;
+} pRibbonSinnohB;
+#pragma pack(pop)
 
-} __PACK__ pRibbonSinnohB;
-
+#pragma pack(push, 1)
 typedef struct {
 	//Byte1
 	unsigned int cool_normal	: 1;
@@ -118,8 +122,10 @@ typedef struct {
 	unsigned int national	: 1;
 	unsigned int earth	: 1;
 	unsigned int world	: 1;
-} __PACK__ pRibbonHoenn;
+} pRibbonHoenn;
+#pragma pack(pop)
 
+#pragma pack(push, 1)
 //Be careful if you choose to edit this, its packed!
 struct pPKM {
 	uint32_t pid;
@@ -221,15 +227,18 @@ struct pPKM {
 	uint16_t battle_sdef;  //20
 	uint8_t battle_unknown_x9C_xD3[56]; //76
 	uint8_t battle_seal_coord[24]; //100
-} __PACK__;
+};
+#pragma pack(pop)
 
+#pragma pack(push, 1)
 struct pBlock {
 	uint32_t pid;
 	char unknown[2];
 	uint16_t checksum;
 	uint8_t block[4][32];
 	uint8_t partyData[100];
-} __PACK__;
+};
+#pragma pack(pop)
 
 union PKM {
 	uint8_t	raw[236];
@@ -241,7 +250,7 @@ enum Gender {
 	MALE=0,FEMALE=1,GENDERLESS=3
 };
 
-class Pokemon {
+class DLL_EXPORT Pokemon {
 public:
 	Pokemon();
 	Pokemon(uint8_t* data, uint8_t length);

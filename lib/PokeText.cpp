@@ -6,6 +6,7 @@
  */
 
 #include "internal.h"
+#include <vector>
 
 namespace PokeLib {
 const uint16_t poketext_0x0000[485] = { //0x0000,
@@ -259,9 +260,11 @@ widetext PokeText::toWidetext(const char* mb, size_t length) {
 //		output += id;
 //	}
 	//I CAN DO THIS!?!?!
-	wchar_t tmp[length];
-	mbstowcs((wchar_t*)&tmp, mb, length);
-	return toWidetext(tmp,length);
+    
+	//wchar_t tmp[length];
+    std::vector<wchar_t> tmp(length);
+	mbstowcs(&tmp[0], mb, length);
+	return toWidetext(&tmp[0],length);
 }
 
 }

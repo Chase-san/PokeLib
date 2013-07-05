@@ -9,8 +9,10 @@
 #ifndef PRNG_H_
 #define PRNG_H_
 
+#include <pokelib/config.h>
+
 namespace PokeLib {
-	class PRNG {
+	class DLL_EXPORT PRNG {
 	public:
 		uint32_t seed;
 		void prevSeed();

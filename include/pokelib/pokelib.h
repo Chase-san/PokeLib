@@ -9,16 +9,17 @@
 #ifndef _____POKE_LIB_H_____
 #define _____POKE_LIB_H_____
 
+#include <pokelib/config.h>
 #include <stdint.h>
 #include <string>
-#include "PRNG.h"
-#include "PokeText.h"
-#include "Toolkit.h"
-#include "Pokemon.h"
-#include "Party.h"
-#include "Box.h"
-#include "Save.h"
-#include "Trainer.h"
-#include "Pokedex.h"
+#include <pokelib/PRNG.h>
+#include <pokelib/PokeText.h>
+#include <pokelib/Toolkit.h>
+#include <pokelib/Pokemon.h>
+#include <pokelib/Party.h>
+#include <pokelib/Box.h>
+#include <pokelib/Save.h>
+#include <pokelib/Trainer.h>
+#include <pokelib/Pokedex.h>
 
 #endif //_____POKE_LIB_H_____
