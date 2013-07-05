@@ -15,9 +15,11 @@
 #ifndef PARTY_H_
 #define PARTY_H_
 
+#include <pokelib/config.h>
+
 namespace PokeLib {
 
-class Party {
+class DLL_EXPORT Party {
 public:
 	Party();
 	virtual ~Party();
