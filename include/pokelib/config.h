@@ -1,5 +1,5 @@
 /*
- * Trainer.h
+ * config.h
  *
  *  Created on: Jul 3, 2013
  *      Author: Nicholas Corgan
