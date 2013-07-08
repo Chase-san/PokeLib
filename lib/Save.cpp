@@ -174,13 +174,13 @@ bool Save::parseRawSave() {
     setSavePosition(SaveMain);
     
     BlockA = &data[blockID[type][0]];
-    BlockB = &data[blockID[type][1]];
+    FooterA = &data[footerID[type][0]];
     
     if(getSaveFormat() == RAW256KiB) {
         return true;
     }
     
-    FooterA = &data[footerID[type][0]];
+    BlockB = &data[blockID[type][1]];
     FooterB = &data[footerID[type][1]];
 
     return true;
