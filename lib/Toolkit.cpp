@@ -115,31 +115,6 @@ uint8_t* Toolkit::unshuffle(uint8_t* raw) {
 uint8_t* Toolkit::crypt(uint8_t* raw) {
     return _crypt(raw, true);
 }
-//uint8_t* Toolkit::cryptBoxPokemon(uint8_t* raw) {
-//	return _crypt(raw,false);
-//}
-//uint8_t* Toolkit::cryptPartyPokemon(uint8_t* raw) {
-//	return _crypt(raw,true);
-//}
-
-//	void Toolkit::parseIVs(uint16_t ivs1, uint16_t ivs2, uint8_t *IV) {
-//		bIV iv; iv.block = ((ivs1 << 0x10) | ivs2);
-//
-//		IV[0] = iv.hp;
-//		IV[1] = iv.atk;
-//		IV[2] = iv.def;
-//		IV[3] = iv.spd;
-//		IV[4] = iv.satk;
-//		IV[5] = iv.sdef;
-//
-////		IV[0] = ivs1 & 0x1F; //HP
-////		IV[1] = (ivs1 & 0x3E0) >> 0x5; //Attack
-////		IV[2] = (ivs1 & 0x7C00) >> 0xA; //Defense
-////
-////		IV[3] = ivs2 & 0x1F; //Speed
-////		IV[4] = (ivs2 & 0x3E0) >> 0x5; //Sp. Attack
-////		IV[5] = (ivs2 & 0x7C00) >> 0xA; //Sp. Defense
-//	}
 
 bIV Toolkit::calcIVsfromSeed(uint32_t seed) {
     PRNG prng;
