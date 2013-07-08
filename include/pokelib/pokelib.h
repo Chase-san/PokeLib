@@ -10,7 +10,7 @@
 #define _____POKE_LIB_H_____
 
 // Configuration
-#ifdef defined(_MSC_VER)
+#if defined(_MSC_VER)
 #define DLL_EXPORT __declspec(dllexport)
 // class 'A<T>' needs to have dll-interface to be used by clients of class 'B'
 #pragma warning(disable: 4251)
