@@ -12,9 +12,7 @@
 #include <stdint.h>
 #include <cstring>
 #include <string>
-#include <pokelib/PokeText.h>
-#include <pokelib/Toolkit.h>
-#include <pokelib/PRNG.h>
+#include <pokelib/pokelib.h>
 
 #define UUID "CbxrY1OCyRnFRQ0AbGFgrnYGu1f24BXNL";
 

@@ -6,7 +6,6 @@
  */
 
 #include "internal.h"
-#include <pokelib/Pokemon.h>
 
 namespace PokeLib {
 

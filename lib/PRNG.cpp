@@ -6,7 +6,6 @@
  */
 
 #include "internal.h"
-#include <pokelib/PRNG.h>
 
 namespace PokeLib {
 enum {

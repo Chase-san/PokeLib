@@ -6,8 +6,6 @@
  */
 
 #include "internal.h"
-#include <pokelib/Save.h>
-#include <pokelib/Trainer.h>
 
 namespace PokeLib {
 

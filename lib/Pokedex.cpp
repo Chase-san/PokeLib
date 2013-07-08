@@ -6,8 +6,6 @@
  */
 
 #include "internal.h"
-#include <pokelib/Save.h>
-#include <pokelib/Pokedex.h>
 
 namespace PokeLib {
 Pokedex::Pokedex(Save *sav) {
