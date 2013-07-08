@@ -171,18 +171,18 @@ bool Save::parseRawSave() {
         return false;
     }
 
-	setSavePosition(SaveMain);
-	
+    setSavePosition(SaveMain);
+    
     if(getSaveFormat() == RAW256KiB) {
         BlockA = &data[blockID[type][0]];
         FooterA = &data[footerID[type][0]];
         return true;
     }
-	
-	BlockA = &data[blockID[type][0]];
-	BlockB = &data[blockID[type][1]];
-	FooterA = &data[footerID[type][0]];
-	FooterB = &data[footerID[type][1]];
+    
+    BlockA = &data[blockID[type][0]];
+    BlockB = &data[blockID[type][1]];
+    FooterA = &data[footerID[type][0]];
+    FooterB = &data[footerID[type][1]];
 
     return true;
 }
