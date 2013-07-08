@@ -171,17 +171,17 @@ bool Save::parseRawSave() {
         return false;
     }
 
-    setSavePosition(SaveMain);
-    
-    BlockA = &data[blockID[type][0]];
-    FooterA = &data[footerID[type][0]];
-    
     if(getSaveFormat() == RAW256KiB) {
+		BlockA = &data[blockID[type][0]];
+		FooterA = &data[footerID[type][0]];
+		//set it to the same thing
+		BlockB = &data[blockID[type][0]];
+		FooterB = &data[footerID[type][0]];
         return true;
     }
-    
-    BlockB = &data[blockID[type][1]];
-    FooterB = &data[footerID[type][1]];
+	
+	//This sets the main and secondary saves for RAW512KiB
+	setSavePosition(SaveMain);
 
     return true;
 }
