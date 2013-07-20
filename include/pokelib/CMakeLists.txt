@@ -1,5 +1,7 @@
 FILE(GLOB pokelib_headers RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "*.h")
 
-FOREACH(header ${pokelib_headers})
-    INSTALL(FILES ${header} DESTINATION ${INCLUDE_DIR}/pokelib COMPONENT Headers)
-ENDFOREACH(header)
+IF(NOT USED_AS_SUBMODULE)
+    FOREACH(header ${pokelib_headers})
+        INSTALL(FILES ${header} DESTINATION ${INCLUDE_DIR}/pokelib COMPONENT Headers)
+    ENDFOREACH(header)
+ENDIF(NOT USED_AS_SUBMODULE)
