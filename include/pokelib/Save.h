@@ -10,10 +10,11 @@
  *
  *  It however handles the full 512 KiB file.
  *
- *  Functions should be created for the loading and saving of boxes, trainer data,
- *  and pokedex data. All loading functions create a new object and COPY the data
- *  from the save data to the given structure which is to handle the decoding and
- *  recoding for editing the data and for re-integration into the save.
+ *  Functions should be created for the loading and saving of boxes, trainer
+ * data, and pokedex data. All loading functions create a new object and COPY
+ * the data from the save data to the given structure which is to handle the
+ * decoding and recoding for editing the data and for re-integration into the
+ * save.
  *
  *  Currently it can support raw 512 KiB or raw 256 KiB save types, however with
  *  use of an automated converted, more types could be supported.
@@ -24,16 +25,23 @@
 
 namespace PokeLib {
 
-//Black and White are not yet fully supported
+// Black and White are not yet fully supported
 
 enum SaveType {
-    DP=0, PLAT=1, HGSS=2, BW=3
+  DP = 0,
+  PLAT = 1,
+  HGSS = 2,
+  BW = 3
 };
+
 enum SaveFormat {
-    RAW256KiB=256, RAW512KiB=512
+  RAW256KiB = 256,
+  RAW512KiB = 512
 };
+
 enum SavePosition {
-    SaveMain, SaveSub
+  SaveMain,
+  SaveSub
 };
 
 class Box;
@@ -42,64 +50,65 @@ class Trainer;
 class Pokedex;
 
 class DLL_EXPORT Save {
-    //these are internal for safety reasons
-    SaveType type;
-    SaveFormat format;
-    SavePosition pos;
+  // these are internal for safety reasons
+  SaveType type;
+  SaveFormat format;
+  SavePosition pos;
 
-    uint8_t* FooterA;
-    uint8_t* FooterB;
-public:
-    Save(uint32_t size);
-    virtual ~Save();
+  uint8_t *FooterA;
+  uint8_t *FooterB;
 
-    uint8_t* data;
-    uint8_t* BlockA;
-    uint8_t* BlockB;
+ public:
+  Save(uint32_t size);
+  virtual ~Save();
 
-    //Basic functions
-    bool parseRawSave();
-    uint16_t calcBlockAChecksum() const;
-    uint16_t calcBlockBChecksum() const;
-    void repairBlockAChecksum();
-    void repairBlockBChecksum();
+  uint8_t *data;
+  uint8_t *BlockA;
+  uint8_t *BlockB;
 
-    //Informative functions
-    inline SaveType getSaveType() const {
-        return type;
-    }
-    inline SaveFormat getSaveFormat() const {
-        return format;
-    }
-    inline SavePosition getSavePosition() const {
-        return pos;
-    }
-    void setSavePosition(SavePosition p);
+  // Basic functions
+  bool parseRawSave();
+  uint16_t calcBlockAChecksum() const;
+  uint16_t calcBlockBChecksum() const;
+  void repairBlockAChecksum();
+  void repairBlockBChecksum();
 
-    //Box functions
-    Box *getBox(uint8_t n) const;
-    void setBox(uint8_t n, Box *b);
+  // Informative functions
+  inline SaveType getSaveType() const {
+    return type;
+  }
+  inline SaveFormat getSaveFormat() const {
+    return format;
+  }
+  inline SavePosition getSavePosition() const {
+    return pos;
+  }
+  void setSavePosition(SavePosition p);
 
-    //Party functions
-    Party *getParty() const;
-    void setParty(Party *p);
+  // Box functions
+  Box *getBox(uint8_t n) const;
+  void setBox(uint8_t n, Box *b);
 
-    //Trainer
-    Trainer *getTrainer() const;
-    void setTrainer(Trainer *p);
+  // Party functions
+  Party *getParty() const;
+  void setParty(Party *p);
 
-    //Signature
-    //http://www.projectpokemon.org/wiki/Trainer_Card_Signature
-    //0x600 bytes long, 1 bpp, 192x64
-    //8x8 blocks
-    uint8_t * getSignatureRaw() const;
-    void setSignatureRaw(uint8_t * raw);
+  // Trainer
+  Trainer *getTrainer() const;
+  void setTrainer(Trainer *p);
 
-    //Pokedex
-    Pokedex *getPokedex() const;
-    void setPokedex(Pokedex *p);
+  // Signature
+  // http://www.projectpokemon.org/wiki/Trainer_Card_Signature
+  // 0x600 bytes long, 1 bpp, 192x64
+  // 8x8 blocks
+  uint8_t *getSignatureRaw() const;
+  void setSignatureRaw(uint8_t *raw);
+
+  // Pokedex
+  Pokedex *getPokedex() const;
+  void setPokedex(Pokedex *p);
 };
 
-}
+}  // namespace PokeLib
 
 #endif /* ___SAVE_H_ */

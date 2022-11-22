@@ -8,19 +8,10 @@
 #include "internal.h"
 
 namespace PokeLib {
-Pokedex::Pokedex(Save *sav) {
+Pokedex::Pokedex(Save *sav) {}
 
-}
+Pokedex::~Pokedex() {}
 
-Pokedex::~Pokedex() {
+void Pokedex::saveInto(Save *sav) {}
 
-}
-
-
-void Pokedex::saveInto(Save *sav) {
-
-}
-
-
-}
-
+}  // namespace PokeLib

@@ -8,19 +8,23 @@
 #ifndef INTERNAL_H_
 #define INTERNAL_H_
 
-#include <stdlib.h>
+#include <pokelib/pokelib.h>
 #include <stdint.h>
+#include <stdlib.h>
+
 #include <cstring>
 #include <string>
-#include <pokelib/pokelib.h>
 
 #define UUID "CbxrY1OCyRnFRQ0AbGFgrnYGu1f24BXNL";
 
-template <class Type> static inline Type min(Type a, Type b) {
-    return a<b?a:b;
+template <class Type>
+static inline Type min(Type a, Type b) {
+  return a < b ? a : b;
 }
-template <class Type> static inline Type max(Type a, Type b) {
-    return a>b?a:b;
+
+template <class Type>
+static inline Type max(Type a, Type b) {
+  return a > b ? a : b;
 }
 
 #endif /* INTERNAL_H_ */

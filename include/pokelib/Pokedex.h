@@ -4,7 +4,8 @@
  *  Created on: Dec 4, 2009
  *      Author: Chase
  *
- *  Description: This handles the editing of pokedex data, and all things there in.
+ *  Description: This handles the editing of pokedex data, and all things there
+ * in.
  */
 
 #pragma once
@@ -13,22 +14,22 @@
 
 namespace PokeLib {
 class DLL_EXPORT Pokedex {
-public:
-    Pokedex(Save *sav);
-    virtual ~Pokedex();
+ public:
+  Pokedex(Save *sav);
+  virtual ~Pokedex();
 
-    void saveInto(Save *sav);
+  void saveInto(Save *sav);
 
-    bool hasSeen(int num) {
-        return false;
-    }
-    bool hasCaught(int num) {
-        return false;
-    }
-    bool hasGender(int num) {
-        return false;
-    }
+  bool hasSeen(int num) {
+    return false;
+  }
+  bool hasCaught(int num) {
+    return false;
+  }
+  bool hasGender(int num) {
+    return false;
+  }
 };
-}
+}  // namespace PokeLib
 
 #endif /* POKEDEX_H_ */

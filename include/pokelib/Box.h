@@ -7,8 +7,9 @@
  *  Description: This header file will handle the loading and saving of pokemon
  *  into their boxes. This includes calling the encrypting and shuffling.
  *
- *  As well as provide a unified input/output format the boxes. Having all the pokemon in the box
- *  unshuffled and decrypted when output into this byte structure.
+ *  As well as provide a unified input/output format the boxes. Having all the
+ * pokemon in the box unshuffled and decrypted when output into this byte
+ * structure.
  *
  */
 
@@ -18,30 +19,31 @@
 
 namespace PokeLib {
 class DLL_EXPORT Box {
-    widetext name;
-    uint8_t wallpaper;
-public:
-    Box();
-    virtual ~Box();
-    uint8_t *data;
+  widetext name;
+  uint8_t wallpaper;
 
-    widetext getName() const;
-    void setName(const widetext &text);
+ public:
+  Box();
+  virtual ~Box();
+  uint8_t *data;
 
-    uint8_t getWallpaper() const {
-        return wallpaper;
-    }
-    void setWallpaper(uint8_t numb) {
-        wallpaper = numb;
-    }
+  widetext getName() const;
+  void setName(const widetext &text);
 
-    Pokemon getPokemon(uint8_t slot) const;
-    void setPokemon(uint8_t slot, const Pokemon &pkm);
-    void erasePokemon(uint8_t slot);
+  uint8_t getWallpaper() const {
+    return wallpaper;
+  }
+  void setWallpaper(uint8_t numb) {
+    wallpaper = numb;
+  }
 
-    uint8_t count() const;
+  Pokemon getPokemon(uint8_t slot) const;
+  void setPokemon(uint8_t slot, const Pokemon &pkm);
+  void erasePokemon(uint8_t slot);
+
+  uint8_t count() const;
 };
 
-}
+}  // namespace PokeLib
 
 #endif /* BOX_H_ */

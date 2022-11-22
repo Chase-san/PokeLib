@@ -11,13 +11,13 @@
 
 namespace PokeLib {
 class DLL_EXPORT PRNG {
-public:
-    uint32_t seed;
-    void prevSeed();
-    void nextSeed();
-    uint16_t prev();
-    uint16_t current() const;
-    uint16_t next();
+ public:
+  uint32_t seed;
+  void prevSeed();
+  void nextSeed();
+  uint16_t prev();
+  uint16_t current() const;
+  uint16_t next();
 };
-}
+}  // namespace PokeLib
 #endif /* PRNG_H_ */
