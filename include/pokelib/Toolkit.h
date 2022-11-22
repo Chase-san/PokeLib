@@ -54,8 +54,7 @@ public:
     static bIV calcIVsfromSeed(PRNG &prng);
     static std::vector<bIV> calcIVsfromPID(uint32_t pid);
     static std::vector<uint32_t> calcPIDsfromIVs(bIV &ivs);
-    //static uint32_t calcPIDfromIVs(bIV &ivs);
-    //static uint32_t calcPIDfromIVs(uint8_t hp,uint8_t atk,uint8_t def,uint8_t speed,uint8_t satk,uint8_t sdef);
+	static uint32_t calcPID(uint16_t nature, uint16_t gender, uint16_t sid, uint16_t tid, bool isShiny);
 };
 
 }
